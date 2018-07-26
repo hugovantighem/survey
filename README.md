@@ -53,7 +53,7 @@ Environnement
 
 
 
-
+### Appréciation
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -61,11 +61,12 @@ Environnement
 * :star::star::star: Forte connaissance
 
 
+
 ---
 ##  Pull Request    
        217047390b70b11b3ccb83fdc5684e993ea48c61
 
-## Statement
+### Statement
 
 ```java
     /**
@@ -97,11 +98,20 @@ Environnement
     }
 ```
 
-## Response
+### Response
 
 
 
 
+
+
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 
@@ -109,7 +119,7 @@ Environnement
 ##       spring security
 ##       fd25dcf652c28881eeb7e8ecdc72fd2e3cd8f8a2
 
-## Statement
+### Statement
 
 ```java
 @Override
@@ -128,13 +138,22 @@ Environnement
       }
 ```
 
-## Response
+### Response
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
 
 ---
 ##       Mockito
 ##       86f87f241777d3ac1c27e0614512f0a0827bd0df
 
-## Statement
+### Statement
 
 
 
@@ -184,13 +203,22 @@ public class PicsureServiceImplTest {
 }
 ```
 
-## Response
+### Response
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
 
 ---
 ##       RGBD test / client#
 
 
-## Statement
+### Statement
 
 Spec client MySQL
 
@@ -206,13 +234,22 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 
 
 
-## Response
+### Response
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
 
 ---
 ##       Code review
 ##       merge / rebase
 
-## Statement
+### Statement
 
 ```bash
 @e-altran
@@ -267,13 +304,22 @@ pull OK
 ```
 
 
-## Response
+### Response
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
 
 ---
 ##       Exception
 ##       ca7ebc412423b7e969eba6b5ff47426d8074e288
 
-## Statement
+### Statement
  
 ```java
     @Override
@@ -303,13 +349,22 @@ pull OK
     }
 ```
 
-## Response
+### Response
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
 
 ---
 ##       Conditions
 ##       
 
-## Statement
+### Statement
 
 ```java
 // pseudo code 
@@ -332,12 +387,21 @@ True
 False
 ```
 
-## Response
+### Response
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
 
 ---
 ##       Git History
 
-## Statement
+### Statement
 
 ```java
 * |   42806c8 Merge pull request #4 from hv/authentication
@@ -416,8 +480,17 @@ False
 
 ```
 
-## Response
+### Response
 
+
+
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 
@@ -425,7 +498,7 @@ False
 ##       Spring
 ##       external properties
 
-## Statement
+### Statement
 
 ```java
 
@@ -449,7 +522,16 @@ public class SwavenSettings {
 
 ```
 
-## Response
+### Response
+
+
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 
@@ -457,7 +539,7 @@ public class SwavenSettings {
 ##       Simple-architecture
 ##       description
 
-## Statement
+### Statement
 
 ```
 
@@ -478,9 +560,18 @@ MySQL, Memcached, Redis
 
 ```
 
-## Response
+### Response
 
 
+
+
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 
@@ -488,12 +579,21 @@ MySQL, Memcached, Redis
 ##       Complex-architecture
 ##       description
 
-## Statement
+### Statement
 
 ![archi](https://cdn-images-1.medium.com/max/1600/1*K6M-x-6e39jMq_c-2xqZIQ.png)
 
-## Response
+### Response
 
+
+
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 
@@ -501,7 +601,7 @@ MySQL, Memcached, Redis
 ##       Asymetric key encryption
 
 
-## Statement
+### Statement
 
 ```java
 Pub_A
@@ -518,10 +618,19 @@ Expliquer l'échange sécurisé d'un message A --> B
 Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 
-## Response
+### Response
 
 
 
+
+
+
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 
@@ -529,7 +638,7 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 ##       Subject
 ##       description
 
-## Statement
+### Statement
 
 ```java
 
@@ -537,8 +646,14 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 ```
 
-## Response
+### Response
 
+### Appréciation
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 
