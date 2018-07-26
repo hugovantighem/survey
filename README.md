@@ -1,9 +1,5 @@
 ##       Sujets
 
-:worried: Ne connais pas
-:star:
-:star::star:
-:star::star::star:
 
 
 Développement
@@ -57,6 +53,12 @@ Environnement
 
 
 
+
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
 
 
 ---
@@ -536,6 +538,7 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 ```
 
 ## Response
+
 
 
 
