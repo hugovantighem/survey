@@ -50,7 +50,7 @@ Git
 
 ```java
     /**
-<<<<<<< HEAD
+<<<<<< HEAD
      *
      * @param file
      * @return
@@ -65,8 +65,8 @@ Git
     }
 
     /**
-=======
->>>>>>> remove base64 Picsure entry point
+======
+>>>>>> remove base64 Picsure entry point
      * Initialize header with security
      * @return
      */
@@ -79,6 +79,8 @@ Git
 ```
 
 ## Response
+
+
 
 
 
@@ -108,8 +110,6 @@ Git
 ```
 
 ## Response
-
-
 
 ---
 #       rien n'est testé... sauf mockito
@@ -169,7 +169,6 @@ public class PicsureServiceImplTest {
 
 ## Response
 
-
 ---
 #       RGBD test / client#
 
@@ -191,8 +190,6 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 
 
 ## Response
-
-
 
 ---
 #       Code review
@@ -255,8 +252,6 @@ pull OK
 
 ## Response
 
-
-
 ---
 #       Exception handling
 #       ca7ebc412423b7e969eba6b5ff47426d8074e288
@@ -293,7 +288,6 @@ pull OK
 
 ## Response
 
-
 ---
 #       Conditions
 #       && ||
@@ -313,7 +307,7 @@ getFalse(){
     return false
 }
 
-getTrue() && getFalse()
+getTrue() || getFalse()
 
 True False
 False True
