@@ -1,5 +1,9 @@
 ##       Sujets
 
+:worried: Ne connais pas
+:star:
+:star::star:
+:star::star::star:
 
 
 Développement
@@ -532,7 +536,6 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 ```
 
 ## Response
-
 
 
 
