@@ -20,8 +20,8 @@ Développement web
     * API
     * graph de dépendances
 * Architecture appli web
-    * Simple (Controllers, Business, DAL)
-    * [Complexe](#complexe)
+    * [Simple Architecture](#simple-architecture)
+    * [Complex Architecture](#complex-architecture)
 * CORS
 * OAuth, SAML, OPEN-ID
 * Symetric / asymetric key encryption
@@ -446,7 +446,7 @@ public class SwavenSettings {
 
 
 ---
-##       Subject
+##       Simple-architecture
 ##       description
 
 ## Statement
@@ -477,7 +477,7 @@ MySQL, Memcached, Redis
 
 
 ---
-##       Complexe
+##       Complex-architecture
 ##       description
 
 ## Statement
@@ -502,7 +502,6 @@ MySQL, Memcached, Redis
 ```
 
 ## Response
-
 
 
 
