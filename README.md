@@ -13,7 +13,7 @@ Développement
 Testing
 * TDD
 * Mock
-* Mockito
+* [Mockito](#mockito)
 
 Développement web
 * REST
@@ -39,7 +39,7 @@ Spring
 * proxy
 
 Git
-    Historique
+    [Git-History](#Git-History)
 
 Base de Données
 * ORM / Hibernate / JPA
@@ -326,8 +326,7 @@ False
 ## Response
 
 ---
-##       Git
-##       Historique
+##       Git History
 
 ## Statement
 
@@ -502,6 +501,7 @@ MySQL, Memcached, Redis
 ```
 
 ## Response
+
 
 
 
