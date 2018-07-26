@@ -445,6 +445,35 @@ public class SwavenSettings {
 
 
 
+---
+##       Subject
+##       description
+
+## Statement
+
+```
+
+Presentation
+Android, Angular.JS WebClient, OAUTHv2
+
+API
+REST, Jersey (JAX-RS), Jackson (JSON de-/serialisation), DTO-objects (different from business logic models)
+
+Business Logic
+Spring for DI and Event handling. DDD-ish approach of model objects. Longer running jobs are offloaded with SQS in worker-modules.
+
+DAO
+Repository model with Spring JDBC-templates to store Entities. Redis (JEDIS) for Leaderboards, using Ordered Lists. Memcache for Token Store.
+
+Database
+MySQL, Memcached, Redis
+
+```
+
+## Response
+
+
+
 
 
 ---
@@ -473,6 +502,8 @@ public class SwavenSettings {
 ```
 
 ## Response
+
+
 
 
 
