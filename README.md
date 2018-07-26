@@ -6,7 +6,9 @@ Développement
 * Héritage
 * Interface
 * Visibilité méthodes
-* Code review
+* [Exception](#exception)
+* [Code review](#code-review)
+* [Pull Request](#pull-request)
 * environnement / outils dev
 * découpler : DI / IoC
 
@@ -24,7 +26,7 @@ Développement web
     * [Complex Architecture](#complex-architecture)
 * CORS
 * OAuth, SAML, OPEN-ID
-* Symetric / asymetric key encryption
+* [Asymetric key encryption](#asymetric-key-encryption)
 * HTTPS certificats SSL
 * CURL
 
@@ -40,7 +42,7 @@ Spring
 * proxy
 
 Git
-    [History](#git-history)
+* [History](#git-history)
 
 Base de Données
 * ORM / Hibernate / JPA
@@ -54,8 +56,8 @@ Environnement
 
 
 ---
-##       pull request avec merge oublié
-##       217047390b70b11b3ccb83fdc5684e993ea48c61
+##  Pull Request    
+       217047390b70b11b3ccb83fdc5684e993ea48c61
 
 ## Statement
 
@@ -490,6 +492,34 @@ MySQL, Memcached, Redis
 
 
 ---
+##       Asymetric key encryption
+
+
+## Statement
+
+```java
+Pub_A
+priv_A
+
+```
+```java
+Pub_B
+priv_B
+
+```
+
+Expliquer l'échange sécurisé d'un message A --> B
+Expliquer la vérification de l'authenticité de l'expéditeur B --> A
+
+
+## Response
+
+
+
+
+
+
+---
 ##       Subject
 ##       description
 
@@ -502,6 +532,7 @@ MySQL, Memcached, Redis
 ```
 
 ## Response
+
 
 
 
