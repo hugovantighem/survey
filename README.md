@@ -29,8 +29,9 @@ Développement web
 * CURL
 
 Spring
-* configuration : @Value @Configuration
+* configuration externe : @Value @ConfigurationProperties
 * @Bean
+* @Configuration
 * @Component
 * @Service
 * @RestController
@@ -39,7 +40,7 @@ Spring
 * proxy
 
 Git
-    [Git-History](#Git-History)
+    [History](#git-history)
 
 Base de Données
 * ORM / Hibernate / JPA
@@ -501,8 +502,6 @@ MySQL, Memcached, Redis
 ```
 
 ## Response
-
-
 
 
 
