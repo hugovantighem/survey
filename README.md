@@ -1,6 +1,3 @@
-
-
-
 #       Sujets
 
 
@@ -45,7 +42,7 @@ Git
 
 
 
-===
+---
 #       pull request avec merge oublié
 #       217047390b70b11b3ccb83fdc5684e993ea48c61
 
@@ -89,7 +86,7 @@ Git
 
 
 
-===
+---
 #       spring security
 #       fd25dcf652c28881eeb7e8ecdc72fd2e3cd8f8a2
 
@@ -114,7 +111,7 @@ Git
 
 ## Response
 
-===
+---
 #       rien n'est testé... sauf mockito
 #       86f87f241777d3ac1c27e0614512f0a0827bd0df
 
@@ -172,7 +169,7 @@ public class PicsureServiceImplTest {
 
 ## Response
 
-===
+---
 #       RGBD test / client#
 
 
@@ -194,7 +191,7 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 
 ## Response
 
-===
+---
 #       Code review
 #       merge / rebase
 
@@ -255,7 +252,7 @@ pull OK
 
 ## Response
 
-===
+---
 #       Exception handling
 #       ca7ebc412423b7e969eba6b5ff47426d8074e288
 
@@ -290,7 +287,7 @@ pull OK
 
 ## Response```
 
-===
+---
 #       Conditions
 #       && ||
 
