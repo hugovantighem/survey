@@ -1,3 +1,5 @@
+Ctrl+k v
+
 ##       Sujets
 
 
@@ -53,7 +55,7 @@ Environnement
 
 
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -106,7 +108,7 @@ Environnement
 
 
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -140,7 +142,7 @@ Environnement
 
 ### Response
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -205,7 +207,7 @@ public class PicsureServiceImplTest {
 
 ### Response
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -236,7 +238,7 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 
 ### Response
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -306,7 +308,7 @@ pull OK
 
 ### Response
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -351,7 +353,7 @@ pull OK
 
 ### Response
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -389,7 +391,7 @@ False
 
 ### Response
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -485,7 +487,7 @@ False
 
 
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -526,7 +528,7 @@ public class SwavenSettings {
 
 
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -566,7 +568,7 @@ MySQL, Memcached, Redis
 
 
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -588,7 +590,7 @@ MySQL, Memcached, Redis
 
 
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -625,7 +627,7 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
@@ -648,7 +650,7 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 ### Response
 
-### Appréciation
+### Knowledge
 
 * :worried: Ne connais pas
 * :star: Connaissance faible
