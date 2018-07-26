@@ -54,6 +54,11 @@ Environnement
 * Docker
 
 
+Misc
+* Awesome skills here !
+* Or the bad ones
+
+
 
 ### Knowledge
 
