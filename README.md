@@ -1,4 +1,4 @@
-# survey
+
 
 
 #################################################################
@@ -57,7 +57,7 @@ Git
 #
 #################################################################
 
-
+```
     /**
 <<<<<<< HEAD
      *
@@ -85,7 +85,7 @@ Git
         headers.set("Authorization", "Bearer " + picsureSettings.getToken());
         return headers;
     }
-
+```
 
 
 
@@ -101,7 +101,7 @@ Git
 #
 #################################################################
 
-
+```
 @Override
      protected void configure(HttpSecurity http) throws Exception {
          http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
@@ -116,7 +116,7 @@ Git
                   .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
           http.headers().cacheControl();
       }
-
+```
 
 
 #################################################################
@@ -131,7 +131,7 @@ Git
 
 
 
-
+```
 @RunWith(SpringRunner.class)
 public class PicsureServiceImplTest {
 
@@ -175,7 +175,7 @@ public class PicsureServiceImplTest {
     }
 
 }
-
+```
 
 
 #################################################################
@@ -209,7 +209,7 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 #
 #################################################################
 
-
+```
 @emmanuel-altran
 test
 f9407b8
@@ -259,7 +259,7 @@ c75c7a9
 pull OK
 115646d
  @emmanuel-altran emmanuel-altran requested review from hugovantighem and cchoisy 2 minutes ago
-
+```
 
 
 
@@ -271,7 +271,7 @@ pull OK
 #
 #################################################################
  
-
+```
     @Override
     public Long storeAttachment(MultipartFile file) {
         // Persist into database
@@ -297,6 +297,7 @@ pull OK
         }
 
     }
+```
 
 #################################################################
 #
@@ -306,7 +307,7 @@ pull OK
 #
 #################################################################
 
-
+```
 // pseudo code 
 
 getTrue(){
@@ -325,3 +326,4 @@ True False
 False True
 True 
 False
+```
