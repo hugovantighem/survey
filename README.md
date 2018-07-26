@@ -1,6 +1,3 @@
-
-
-
 #       Sujets
 
 
@@ -287,8 +284,9 @@ pull OK
         }
 
     }
+```
 
-## Response```
+## Response
 
 ---
 #       Conditions
@@ -318,5 +316,6 @@ False
 ```
 
 ## Response
+
 
 
