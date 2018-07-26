@@ -23,6 +23,7 @@ Développement web
     * Simple (Controllers, Business, DAL)
 * CORS
 * OAuth, SAML, OPEN-ID
+* Symetric / asymetric key encryption
 * HTTPS certificats SSL
 * CURL
 
@@ -103,7 +104,7 @@ Environnement
 ```java
 @Override
      protected void configure(HttpSecurity http) throws Exception {
-         http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
+         http.authorizeRequests()
                  .antMatchers("/").permitAll()
                   // permit swagger
                   .antMatchers(AUTH_LIST).permitAll()
@@ -120,12 +121,10 @@ Environnement
 ## Response
 
 ---
-##       rien n'est testé... sauf mockito
+##       Mockito
 ##       86f87f241777d3ac1c27e0614512f0a0827bd0df
 
 ## Statement
-
-
 
 
 
@@ -261,7 +260,7 @@ pull OK
 ## Response
 
 ---
-##       Exception handling
+##       Exception
 ##       ca7ebc412423b7e969eba6b5ff47426d8074e288
 
 ## Statement
@@ -298,7 +297,7 @@ pull OK
 
 ---
 ##       Conditions
-##       && ||
+##       
 
 ## Statement
 
@@ -422,11 +421,9 @@ False
 ```java
 
 @Validated
-@Getter @Setter
 @Configuration
-@ConfigurationProperties(prefix = SwavenSettings.PREFIX)
+@ConfigurationProperties(prefix = "swaven.api")
 public class SwavenSettings {
-    public static final String PREFIX = "swaven.api";
 
     @Valid @NotEmpty
     private String host;
@@ -439,9 +436,6 @@ public class SwavenSettings {
 
     @Valid @NotEmpty
     private String headerApiKey;
-
-    @Valid @NotEmpty
-    private Map<String, List<String>> categoryMapping;
 }
 
 ```
@@ -466,4 +460,8 @@ public class SwavenSettings {
 ```
 
 ## Response
+
+
+
+
 
