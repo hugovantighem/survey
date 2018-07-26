@@ -20,7 +20,7 @@ Développement web
     * API
     * graph de dépendances
 * Architecture appli web
-        Simple (Controllers, Business, DAL)
+    * Simple (Controllers, Business, DAL)
 * CORS
 * OAuth, SAML, OPEN-ID
 * HTTPS certificats SSL
@@ -42,6 +42,9 @@ Git
 Base de Données
 * ORM / Hibernate / JPA
 * Lib de gestion de schéma / migration
+
+Environnement
+* Docker
 
 
 
@@ -203,55 +206,55 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 ## Statement
 
 ```bash
-@emmanuel-altran
+@e-altran
 test
 f9407b8
- @emmanuel-altran
+ @e-altran
 big refacto
 9b6cafa
- @emmanuel-altran
+ @e-altran
 fusion ok
 270c9d0
- @emmanuel-altran
+ @e-altran
 add gitignore
 0278cf4
- @emmanuel-altran
+ @e-altran
 remove target dir
 2cc4f22
- @emmanuel-altran
+ @e-altran
 rename picsure endpoint
 14086e4
- @emmanuel-altran
+ @e-altran
 remove target files
 f649fa1
- @emmanuel-altran
+ @e-altran
 restore gitgnore
 2e90a41
- @emmanuel-altran
+ @e-altran
 change gitignore
 837e417
- @emmanuel-altran
+ @e-altran
 add module handling
 e538878
- @emmanuel-altran
+ @e-altran
 Merge branch 'master' of https://github.com/ALTRAN-MONTPELLIER/chooz-… …
 1b9eba4
- @emmanuel-altran
+ @e-altran
 restore gitognore
 08087cc
- @emmanuel-altran
+ @e-altran
 change Picsure Training homepage text
 6d70b3b
- @emmanuel-altran
+ @e-altran
 Merge branch 'master' of https://github.com/ALTRAN-MONTPELLIER/chooz-… …
 afaa5c7
- @emmanuel-altran
+ @e-altran
 change homepage picsure training
 c75c7a9
- @emmanuel-altran
+ @e-altran
 pull OK
 115646d
- @emmanuel-altran emmanuel-altran requested review from hugovantighem and cchoisy 2 minutes ago
+ @e-altran e-altran requested review from hv and cchoisy 2 minutes ago
 ```
 
 
@@ -323,51 +326,45 @@ False
 ## Response
 
 ---
-##       Conditions
-##       && ||
+##       Git
+##       Historique
 
 ## Statement
 
 ```java
-*   43a8899 Merge pull request #11 from emmanuel-altran/master
-|\  
-| *   0e368c7 Merge branch 'master' of https://github.com/ALTRAN-MONTPELLIER/chooz-back
-| |\  
-| |/  
-|/|   
-* | 0e8bf0e Run tests while mvn install
-* | a6fdc51 Mock authentication in tests
-* |   fafd4c6 Merge pull request #10 from emmanuel-altran/master
-|\ \  
-* \ \   335dd6a Merge pull request #9 from emmanuel-altran/master
-|\ \ \  
-* \ \ \   206f3dc Merge pull request #7 from emmanuel-altran/master
-|\ \ \ \  
-* \ \ \ \   01db461 Merge pull request #6 from emmanuel-altran/master
-|\ \ \ \ \  
-* \ \ \ \ \   88e3a5c Merge pull request #5 from emmanuel-altran/master
-|\ \ \ \ \ \  
-| | | | | | * 4a771eb add lombox to Login class
-| | | | | |/  
-| | | | | * a5163de add missing classes
-| | | | |/  
-| | | | * ffab3b8 refacto style
-| | | |/  
-| | | * 9644da1 refacto security / add token managment
-| | |/  
-| | * 5be0760 add specific scripts for test DB
-| |/  
-| * 38cd7be add launcher module / set tests
-| *   8ebd175 add launcher module
-| |\  
-| |/  
-|/|   
-* |   42806c8 Merge pull request #4 from hugovantighem/authentication
+* |   42806c8 Merge pull request #4 from hv/authentication
 |\ \  
 | * | 6109e00 (perso/authentication) Example of api specification test, authentication with secure endpoint
 |/ /  
 | * ee1e363 create launcher
-|/
+| *   cdf4e37 Merge branch 'master' of https://github.com/ALTRAN-MONTPELLIER/chooz-back
+| |\  
+| |/  
+|/|   
+* |   b5f9e22 Merge pull request #3 from hv/documentation
+|\ \  
+| * | d7a404f (perso/documentation) Source code management and worflow documentation
+|/ /  
+* |   f283e70 Merge pull request #2 from e-altran/master
+|\ \  
+| | * 21f3d2d add lombok library
+| |/  
+| * b44ff65 add first controller / security
+| *   bbe0a1a Merge branch 'master' of https://github.com/ALTRAN-MONTPELLIER/chooz-back
+| |\  
+| |/  
+|/|   
+* | d24bce4 Update README.md
+* |   5829503 Merge pull request #1 from e-altran/master
+|\ \  
+| | * 73ae832 add first REST API
+| |/  
+| *   12a0509 Merge branch 'master' of https://github.com/ALTRAN-MONTPELLIER/chooz-back
+| |\  
+| |/  
+|/|   
+* | bc6b772 Initial commit
+ /  
 * e7f96e1 first commit
 * 0734811 first commit
 ```
@@ -398,7 +395,7 @@ False
 * 3a7a37b Clean storage directory after test
 * 07e41a6 Overriding application.properties for tests
 * a90674d Specific class example for exterlanized configuration
-*   056808e Merge pull request #22 from emmanuel-altran/master
+*   056808e Merge pull request #22 from e-altran/master
 |\  
 | * 15240b0 add unit tests, improve code
 | * d1e7cb0 change conf properties of storage path
@@ -415,6 +412,41 @@ False
 
 
 
+
+---
+##       Spring
+##       external properties
+
+## Statement
+
+```java
+
+@Validated
+@Getter @Setter
+@Configuration
+@ConfigurationProperties(prefix = SwavenSettings.PREFIX)
+public class SwavenSettings {
+    public static final String PREFIX = "swaven.api";
+
+    @Valid @NotEmpty
+    private String host;
+
+    @Valid @NotEmpty
+    private String accessKey;
+
+    @Valid @NotEmpty
+    private String searchEndpoint;
+
+    @Valid @NotEmpty
+    private String headerApiKey;
+
+    @Valid @NotEmpty
+    private Map<String, List<String>> categoryMapping;
+}
+
+```
+
+## Response
 
 
 
