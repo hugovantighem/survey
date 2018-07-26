@@ -80,7 +80,7 @@ Git
 
 ## Response
 
-
+Oubli de merge ce fichier
 
 
 
@@ -110,6 +110,10 @@ Git
 ```
 
 ## Response
+
+On ne commente pas de code
+Plus de sécurité
+
 
 ---
 #       rien n'est testé... sauf mockito
@@ -169,6 +173,8 @@ public class PicsureServiceImplTest {
 
 ## Response
 
+Rien n'est testé
+
 ---
 #       RGBD test / client#
 
@@ -190,6 +196,9 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 
 
 ## Response
+
+On attend que ça pète chez le client
+
 
 ---
 #       Code review
@@ -252,6 +261,9 @@ pull OK
 
 ## Response
 
+
+Historique dégueulasse
+
 ---
 #       Exception handling
 #       ca7ebc412423b7e969eba6b5ff47426d8074e288
@@ -288,6 +300,8 @@ pull OK
 
 ## Response
 
+Super gestion d'erreur
+
 ---
 #       Conditions
 #       && ||
@@ -317,5 +331,5 @@ False
 
 ## Response
 
-
+true
 
