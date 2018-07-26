@@ -1,3 +1,6 @@
+
+
+
 #       Sujets
 
 
@@ -48,7 +51,7 @@ Git
 
 ## Statement
 
-```
+```java
     /**
 <<<<<<< HEAD
      *
@@ -92,7 +95,7 @@ Git
 
 ## Statement
 
-```
+```java
 @Override
      protected void configure(HttpSecurity http) throws Exception {
          http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
@@ -121,7 +124,7 @@ Git
 
 
 
-```
+```java
 @RunWith(SpringRunner.class)
 public class PicsureServiceImplTest {
 
@@ -197,7 +200,7 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 
 ## Statement
 
-```
+```bash
 @emmanuel-altran
 test
 f9407b8
@@ -258,7 +261,7 @@ pull OK
 
 ## Statement
  
-```
+```java
     @Override
     public Long storeAttachment(MultipartFile file) {
         // Persist into database
@@ -293,7 +296,7 @@ pull OK
 
 ## Statement
 
-```
+```java
 // pseudo code 
 
 getTrue(){
@@ -315,4 +318,5 @@ False
 ```
 
 ## Response
+
 
