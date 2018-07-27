@@ -695,8 +695,48 @@ ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
 
 ```
 
-![db](./burger_01_schema.svg)
+```
++--------------+         +---------------+       +----------------+           +----------------+
+|    Adress    |         |   Customer    |       |    Order       |           |     Burger     |
+|              |         |               |       |                |      +--> |  id            |
+|  customer_id +-------> |  id           | <--+  |   id           |      |    |                |
+|              |         |               |    |  |   number       |      |    |  name          |
+|  name        |         |  name         |    |  |   code         |      |    |                |
+|              |         |               |    +--+   customer_id  |      |    |                |
+|              |         |               |       |   burger_id    +------+    |                |
++--------------+         +---------------+       +----------------+           +----------------+
 
+```
+
+```
+
+
+
+
+                                                                              +----------------+
+                                                                              |     Burger     |
+                                                                        +---> |  id            |
+                                                                        |     |                |
+                                                                        |     |  name          |
+ +--------------+         +---------------+       +-----------------+   |     |                |
+ |    Adress    |         |   Customer    |       |    Order_line   |   |     |                |
+ |              |         |               |       |                 |   |     +----------------+
+ |  customer_id +-------> |  id           | <-----+   customer_id   |   |
+ |              |         |               |       |   burger_id     +---+
+ |  name        |         |  name         |       |   order_id      +---+     +----------------+
+ |              |         |               |       |   quantity      |   |     |    Order       |
+ +--------------+         +---------------+       +-----------------+   |     |                |
+                                                                        +---> |   id           |
+                                                                              |   number       |
+                                                                              |   code         |
+                                                                              |                |
+                                                                              +----------------+
+
+
+
+
+
+```
 ### Response
 
 ### Knowledge
