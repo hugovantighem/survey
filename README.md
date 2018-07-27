@@ -642,6 +642,73 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 
 ---
+##       Database
+##       description
+
+### Statement
+
+```sql
+
+
+create table customer (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(45) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+create table address (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(45) DEFAULT NULL,
+  customer_id int(11) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+create table burger (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  name varchar(45) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+create table `order` (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  number varchar(45) DEFAULT NULL,
+  code varchar(45) DEFAULT NULL,
+  PRIMARY KEY (id)
+);
+
+create table order_line (
+  customer_id int(11) NOT NULL,
+  burger_id int(11) NOT NULL,
+  order_id int(11) NOT NULL,
+  qte int(11) NOT NULL,
+  PRIMARY KEY (customer_id, burger_id, order_id)
+);
+
+
+ALTER TABLE `address` ADD CONSTRAINT `fk_address_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`);
+ALTER TABLE `order_line` ADD CONSTRAINT `fk_order_line_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`);
+ALTER TABLE `order_line` ADD CONSTRAINT `fk_order_line_burger` FOREIGN KEY (`burger_id`) REFERENCES `burger` (`id`);
+ALTER TABLE `order_line` ADD CONSTRAINT `fk_order_line_order` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`);
+
+ALTER TABLE `order` ADD CONSTRAINT uc_order_number UNIQUE (number);
+ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
+
+```
+
+![db](./burger_01_schema.svg)
+
+### Response
+
+### Knowledge
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
+
+---
 ##       Subject
 ##       description
 
