@@ -898,7 +898,9 @@ color = getColor(line, col)
 Front : SPA + REST / Websocket
 
 Proposer une architecture (Backend)
+
 Proposer une API pour interagir avec la partie métier
+
 Proposer les tests associés
 
 <details> 
@@ -907,10 +909,19 @@ Proposer les tests associés
     <pre>GET /api/color?line={line}&column={column}</pre>
 </details>
 
-API pour changer la position d'un pion de coordonnées
-{line_from, col_from} vers la position
-{line_to, col_to}
-Ecrire le curl correspondant.
+Imaginons que l'on peut puisse jouer une partie.
+
+Commenter la commande suivante, à quoi peut elle correspondre ?
+
+```bash
+curl \
+    --header 'Content-Type: application/json' \
+    -H "X-auth: W001066"\
+    -X POST  \
+    -d '{"line_from": 3, "col_from": 6, "line_to": 2,"col_to": 7}'\
+    'http://chess-game/api/move/4'
+```
+
 
 ### Response
 
