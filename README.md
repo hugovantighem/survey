@@ -20,6 +20,12 @@ Testing
 * [Mockito](#mockito)
 
 Développement web
+* [Cycle](#cycle)
+    * Spec
+    * Test
+    * Implémentation
+    * Architecture
+    * API
 * REST
     * API
     * graph de dépendances
@@ -124,7 +130,7 @@ Misc
 
 ---
 ##       spring security
-##       fd25dcf652c28881eeb7e8ecdc72fd2e3cd8f8a2
+       fd25dcf652c28881eeb7e8ecdc72fd2e3cd8f8a2
 
 ### Statement
 
@@ -158,7 +164,7 @@ Misc
 
 ---
 ##       Mockito
-##       86f87f241777d3ac1c27e0614512f0a0827bd0df
+       86f87f241777d3ac1c27e0614512f0a0827bd0df
 
 ### Statement
 
@@ -746,6 +752,165 @@ ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
 
 </pre>
 </details>
+
+### Response
+
+### Knowledge
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
+
+
+---
+##       Cycle
+
+### Specifications
+
+Damier 8x8 cases
+
+```
++-----------------------+
+|xx|  |xx|  |xx|  |xx|  |
++-----------------------+
+|  |xx|  |xx|  |xx|  |xx|
++-----------------------+
+|xx|  |xx|  |xx|  |xx|  |
++-----------------------+
+|  |xx|  |xx|  |xx|  |xx|
++-----------------------+
+|xx|  |xx|  |xx|  |xx|  |
++-----------------------+
+|  |xx|  |xx|  |xx|  |xx|
++-----------------------+
+|xx|  |xx|  |xx|  |xx|  |
++-----------------------+
+|  |xx|  |xx|  |xx|  |xx|
++-----------------------+
+
+'xx' -> "black
+'  ' -> "white
+
+
+```
+
+Classe `Checkerboard` permettant de retrouver la couleur d'une case correspondant à la ligne et colonne données en paramètres via une méthode `getColor(line, col)`.
+
+Prévu d'être accessible via une application web.
+
+D'autres fonctionnalités sont prévues pour la gestion d'un jeux d'échecs.
+
+```java
+pseudo code
+
+considering the first index for row and columns to be 0
+
+line = 2
+col = 4
+color = getColor(line, col)
+
+// color == "black"
+
+```
+
+<details> 
+  <summary>T </summary>
+    <pre>
+
+        Class CheckerboardTest {
+
+            function specification_case_test (){
+                color = Checkerboard.getColor(2, 4)
+
+                assert(color == 'black')
+            }
+
+            function limit_test (){
+                color = Checkerboard.getColor(0, 0)
+                assert(color == 'black')
+
+                color = Checkerboard.getColor(0, 7)
+                assert(color == 'white')
+
+                color = Checkerboard.getColor(7, 0)
+                assert(color == 'white')
+
+                color = Checkerboard.getColor(7, 7)
+                assert(color == 'black')
+            }
+
+            function out_limit_test (){
+                color = Checkerboard.getColor(-1, 0)
+                assert(color == null)
+
+                color = Checkerboard.getColor(0, -1)
+                assert(color == null)
+
+                color = Checkerboard.getColor(8, 0)
+                assert(color == null)
+
+                color = Checkerboard.getColor(0, 8)
+                assert(color == null)
+            }
+        }
+
+    </pre>
+</details>
+
+<details> 
+  <summary>I </summary>
+    <pre>
+
+        Class Checkerboard {
+            MIN_LINE = 0
+            MAX_LINE = 0
+            MIN_COLUMN = 7
+            MAX_COLUMN = 7
+
+            /**
+            * Return case color according to line and column
+            * line and column first index is 0
+            * return 'black' or 'white'
+            * return null when if line and/or column is out of bounds
+            */
+            function getColor (int line, int column){
+                if(line < MIN_LINE || line > MAX_LINE ){
+                    // line out of bounds
+                    return null
+                }
+                if(column < MIN_COLUMN || column > MAX_COLUMN ){
+                    // column out of bound
+                    return null
+                }
+                // check if sum of line and column is even or odd
+                return (line + column) % 2 == 0 ? 'black' : 'white'
+            }
+        }
+
+    </pre>
+</details>
+
+### Architecture
+
+Front : SPA + REST / Websocket
+
+Proposer une architecture (Backend)
+Proposer une API pour interagir avec la partie métier
+Proposer les tests associés
+
+<details> 
+  <summary>API </summary>
+    <pre>GET /api/color/line/column</pre>
+    <pre>GET /api/color?line={line}&column={column}</pre>
+</details>
+
+API pour changer la position d'un pion de coordonnées
+{line_from, col_from} vers la position
+{line_to, col_to}
+Ecrire le curl correspondant.
 
 ### Response
 
