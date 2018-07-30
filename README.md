@@ -647,6 +647,10 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 ### Statement
 
+
+<details> 
+  <summary>Database script </summary>
+   
 ```sql
 
 
@@ -694,8 +698,12 @@ ALTER TABLE `order` ADD CONSTRAINT uc_order_number UNIQUE (number);
 ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
 
 ```
+</details>
 
-```
+
+<details> 
+  <summary>ERD 1 </summary>
+<pre>
 +--------------+         +---------------+       +----------------+           +----------------+
 |    Adress    |         |   Customer    |       |    Order       |           |     Burger     |
 |              |         |               |       |                |      +--> |  id            |
@@ -706,13 +714,13 @@ ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
 |              |         |               |       |   burger_id    +------+    |                |
 +--------------+         +---------------+       +----------------+           +----------------+
 
-```
-
-```
-
+</pre>
+</details>
 
 
-
+<details> 
+  <summary>ERD 2 </summary>
+<pre>
                                                                               +----------------+
                                                                               |     Burger     |
                                                                         +---> |  id            |
@@ -736,7 +744,9 @@ ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
 
 
 
-```
+</pre>
+</details>
+
 ### Response
 
 ### Knowledge
