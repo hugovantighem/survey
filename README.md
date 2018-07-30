@@ -39,7 +39,7 @@ Développement web
 * CURL
 
 Spring
-* configuration externe : @Value @ConfigurationProperties
+* [Spring configuration](#configurationProperties) : @Value @ConfigurationProperties
 * @Bean
 * @Configuration
 * @Component
@@ -81,6 +81,8 @@ Misc
 
 ### Statement
 
+La personne qui fait la code review découvre le code suivant, quelle erreur est évidente ?
+
 ```java
     /**
 <<<<<< HEAD
@@ -113,6 +115,15 @@ Misc
 
 ### Response
 
+<details> 
+  <summary>Expectations </summary>
+   
+```
+Le développeur a mal résolu les conflits
+```
+</details>
+
+
 
 
 
@@ -134,6 +145,8 @@ Misc
 
 ### Statement
 
+Que dire du code suivant retrouvé dans une pull request ?
+
 ```java
 @Override
      protected void configure(HttpSecurity http) throws Exception {
@@ -152,6 +165,16 @@ Misc
 ```
 
 ### Response
+
+<details> 
+  <summary>Expectations </summary>
+   
+```
+La sécurité est désactivée.
+Eviter de commiter du code commenté.
+Les éléments "/api/picsure/**" et "/swagger-ui.html**" devraient être inclus dans AUTH_LIST
+```
+</details>
 
 ### Knowledge
 
@@ -218,6 +241,14 @@ public class PicsureServiceImplTest {
 
 ### Response
 
+<details> 
+  <summary>Expectations </summary>
+   
+```
+Rien n'est testé !
+```
+</details>
+
 ### Knowledge
 
 * :worried: Ne connais pas
@@ -260,7 +291,7 @@ Avec une base cible client MySQL, si on lance les tests en environnement local e
 
 ---
 ##       Code review
-##       merge / rebase
+       merge / rebase
 
 ### Statement
 
@@ -319,6 +350,16 @@ pull OK
 
 ### Response
 
+<details> 
+  <summary>Expectations </summary>
+   
+```
+Historique sale
+Le développeur fait des merges, non des rebase
+Messages de commit non explicites
+```
+</details>
+
 ### Knowledge
 
 * :worried: Ne connais pas
@@ -364,6 +405,15 @@ pull OK
 
 ### Response
 
+<details> 
+  <summary>Expectations </summary>
+   
+```
+La gestion de l'exception n'est pas très bonne.
+Il faudrait logguer l'exception et la traiter.
+```
+</details>
+
 ### Knowledge
 
 * :worried: Ne connais pas
@@ -402,6 +452,14 @@ False
 
 ### Response
 
+<details> 
+  <summary>Expectations </summary>
+   
+```
+True
+```
+</details>
+
 ### Knowledge
 
 * :worried: Ne connais pas
@@ -413,6 +471,9 @@ False
 
 ---
 ##       Git History
+
+
+Que peut-on dire des historiques git suivants ?
 
 ### Statement
 
@@ -495,6 +556,28 @@ False
 
 ### Response
 
+<details> 
+  <summary>Expectations </summary>
+   
+```
+1 => les développeurs mergent master vers sa branche de travail locale ou pull puis mergent ensuite dans la master
+2 => les développeurs utilisent ensuite la commande `git rebase`
+les messages de commit sont dupliqués (mauvais historique)
+ 26e1fb8 add web structure
+ e49f0f4 add web structure
+ e7f96e1 first commit
+ 0734811 first commit
+les messages de commit ne sont pas explicites
+ 7b823aa undo
+ c42ce1f essai
+les messages de commit référencent un ticket
+ b9e7691 CHOOZ-75 Empty entity classes
+ f539b1e CHOOZ-72 inid db data for tests + helper (category, subcategory)
+ 5ac1e26 CHOOZ-75 Entity relationships
+
+```
+</details>
+
 
 
 
@@ -508,10 +591,11 @@ False
 
 
 ---
-##       Spring
-##       external properties
+##       ConfigurationProperties
 
 ### Statement
+
+A quoi sert ce code ?
 
 ```java
 
@@ -535,7 +619,25 @@ public class SwavenSettings {
 
 ```
 
+Que se passe-t'il si l'on démarre l'application avec les lignes suivantes dans application.properties
+
+```
+swaven.api.host=192.168.3.1
+swaven.api.accessKey=123456
+swaven.api.searchEndpoint=/search
+swaven.api.headerApiKey=
+```
+
 ### Response
+
+<details> 
+  <summary>Expectations </summary>
+   
+```
+fichier prenant en charge les propriété externalisées pour le préfix 'swaven.api'
+l'application ne démarre pas car le Bean 'SwavenSettings' ne peut pas être créé (swaven.api.headerApiKey ne doit pas être vide)
+```
+</details>
 
 
 
@@ -553,6 +655,30 @@ public class SwavenSettings {
 ##       description
 
 ### Statement
+
+Décrire une architecture web et couremment utilisée découpée en différentes couches.
+
+<details> 
+  <summary>Hints </summary>
+
+```
+Presentation
+
+API
+
+Business Logic
+
+DAO
+
+Database
+```
+</details>
+
+
+### Response
+
+<details> 
+  <summary>Expectations </summary>
 
 ```
 
@@ -572,8 +698,7 @@ Database
 MySQL, Memcached, Redis
 
 ```
-
-### Response
+</details>
 
 
 
@@ -628,6 +753,7 @@ priv_B
 ```
 
 Expliquer l'échange sécurisé d'un message A --> B
+
 Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 
@@ -649,10 +775,25 @@ Expliquer la vérification de l'authenticité de l'expéditeur B --> A
 
 ---
 ##       Database
-##       description
+       description
 
 ### Statement
 
+Votre client qui vends des burgers souhaite pouvoir saisir les commandes via une application web.
+
+### Specs 
+
+Un client peut effectuer une commande regroupant différents burgers.
+
+Une commande portera un numéro de commande.
+
+Un client peut associer un code promo à sa commande.
+
+Un code promo ne peut être utilisé que pour une seule commande.
+
+Un client possède une liste d'adresse (pour la livraison).
+
+Proposer un schéma de la base de données associée.
 
 <details> 
   <summary>Database script </summary>
