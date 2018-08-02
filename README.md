@@ -76,12 +76,57 @@ Misc
 
 
 ---
+##       Conditions       
+
+### Statement
+
+```java
+// pseudo code 
+
+getTrue(){
+    display("True")
+    return true
+}
+
+getFalse(){
+    display("False")
+    return false
+}
+
+getTrue() || getFalse()
+
+True False
+False True
+True 
+False
+```
+
+### Response
+
+<details> 
+  <summary>Expectations </summary>
+   
+```
+True
+```
+</details>
+
+### Knowledge
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
+
+---
 ##  Pull Request    
        217047390b70b11b3ccb83fdc5684e993ea48c61
 
 ### Statement
 
-La personne qui fait la code review découvre le code suivant, quelle erreur est évidente ?
+La personne qui fait la code review découvre le code suivant, que dire du code analysé ?
 
 ```java
     /**
@@ -154,8 +199,8 @@ Que dire du code suivant retrouvé dans une pull request ?
                  .antMatchers("/").permitAll()
                   // permit swagger
                   .antMatchers(AUTH_LIST).permitAll()
-                  .antMatchers(HttpMethod.GET, "/swagger-ui.html**").permitAll()
-                  //.antMatchers("/api/**").authenticated()
+            .antMatchers(HttpMethod.GET, "/swagger-ui.html**").permitAll()
+            //.antMatchers("/api/**").authenticated()
                   .antMatchers("/api/picsure/**").permitAll()
                   .and()
                   //.addFilterBefore(identificationFilter, BasicAuthenticationFilter.class)
@@ -173,6 +218,7 @@ Que dire du code suivant retrouvé dans une pull request ?
 La sécurité est désactivée.
 Eviter de commiter du code commenté.
 Les éléments "/api/picsure/**" et "/swagger-ui.html**" devraient être inclus dans AUTH_LIST
+Code style (Indentation)
 ```
 </details>
 
@@ -226,14 +272,6 @@ public class PicsureServiceImplTest {
         Mockito.when(picsureService.lookup(Mockito.anyString())).thenReturn(mapper.readValue(file, PicsureLookupResponse.class));
         PicsureLookupResponse lookupResponse = picsureService.lookup("any_string");
         Assert.assertTrue(lookupResponse.getObjectRecognition().length > 0);
-    }
-
-    @Test
-    public void should_not_detect_fraud_when_lookup_for_a_valid_image() throws IOException {
-        File file = new File(MOCKED_JSON_PATH + "picsure_lookup_ok.json");
-        Mockito.when(picsureService.lookup(Mockito.anyString())).thenReturn(mapper.readValue(file, PicsureLookupResponse.class));
-        PicsureLookupResponse lookupResponse = picsureService.lookup("any_string");
-        Assert.assertNull(lookupResponse.getFraudDetection());
     }
 
 }
@@ -344,7 +382,7 @@ c75c7a9
  @e-altran
 pull OK
 115646d
- @e-altran e-altran requested review from hv and cchoisy 2 minutes ago
+ @e-altran e-altran requested review from hv and cc 2 minutes ago
 ```
 
 
@@ -424,41 +462,62 @@ Il faudrait logguer l'exception et la traiter.
 
 
 ---
-##       Conditions
-##       
+##       Git workflow
 
 ### Statement
 
-```java
-// pseudo code 
-
-getTrue(){
-    display("True")
-    return true
-}
-
-getFalse(){
-    display("False")
-    return false
-}
-
-getTrue() || getFalse()
-
-True False
-False True
-True 
-False
-```
+Vous intégrez une équipe pour travailler sur un projet en cours avec une gestion de sources sous git. Vous allez être en charge du développement d'une fonctionnalité 'Gestion des moyens de paiement', comment procédez vous ?
 
 ### Response
 
-<details> 
-  <summary>Expectations </summary>
-   
+### Knowledge
+
+* :worried: Ne connais pas
+* :star: Connaissance faible
+* :star::star: A l'aise
+* :star::star::star: Forte connaissance
+
+
+
+---
+##       Git commands
+
+### Statement
+
+Que montrent ces lignes ? 
+
+```bash
+april	git@gitlab.april-waf.local:innovation/chooz-api.git (fetch)
+april	git@gitlab.april-waf.local:innovation/chooz-api.git (push)
+origin	git@github.com:ALTRAN-MONTPELLIER/chooz-back.git (fetch)
+origin	git@github.com:ALTRAN-MONTPELLIER/chooz-back.git (push)
+perso	git@github.com:hugovantighem/chooz-back.git (fetch)
+perso	git@github.com:hugovantighem/chooz-back.git (push)
+
 ```
-True
+
+```bash
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	modified:   chooz-web/package-lock.json
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	deleted:    chooz-launcher/src/test/resources/storage/.gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	chooz-launcher/src/test/resources/storage/6cb39468-a88d-49a8-866b-f1c2120968a9.txt
+
 ```
-</details>
+
+
+### Response
 
 ### Knowledge
 
@@ -550,7 +609,7 @@ Que peut-on dire des historiques git suivants ?
 | |\  
 | |/  
 |/|   
-* |   7260e79 Merge pull request #21 from cchoisy/master
+* |   7260e79 Merge pull request #21 from cc/master
 
 ```
 
@@ -791,7 +850,7 @@ Un client peut associer un code promo à sa commande.
 
 Un code promo ne peut être utilisé que pour une seule commande.
 
-Un client possède une liste d'adresse (pour la livraison).
+Un client possède une liste d'adresses (ex: domicile, travail).
 
 Proposer un schéma de la base de données associée.
 
@@ -809,7 +868,7 @@ create table customer (
 
 create table address (
   id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(45) DEFAULT NULL,
+  `desc` varchar(45) DEFAULT NULL,
   customer_id int(11) DEFAULT NULL,
   PRIMARY KEY (id)
 );
@@ -852,11 +911,11 @@ ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
   <summary>ERD 1 </summary>
 <pre>
 +--------------+         +---------------+       +----------------+           +----------------+
-|    Adress    |         |   Customer    |       |    Order       |           |     Burger     |
+|    Address   |         |   Customer    |       |    Order       |           |     Burger     |
 |              |         |               |       |                |      +--> |  id            |
 |  customer_id +-------> |  id           | <--+  |   id           |      |    |                |
 |              |         |               |    |  |   number       |      |    |  name          |
-|  name        |         |  name         |    |  |   code         |      |    |                |
+|  desc        |         |  name         |    |  |   code         |      |    |                |
 |              |         |               |    +--+   customer_id  |      |    |                |
 |              |         |               |       |   burger_id    +------+    |                |
 +--------------+         +---------------+       +----------------+           +----------------+
@@ -874,11 +933,11 @@ ALTER TABLE `order` ADD CONSTRAINT uc_order_code UNIQUE (code);
                                                                         |     |                |
                                                                         |     |  name          |
  +--------------+         +---------------+       +-----------------+   |     |                |
- |    Adress    |         |   Customer    |       |    Order_line   |   |     |                |
+ |    Address   |         |   Customer    |       |    Order_line   |   |     |                |
  |              |         |               |       |                 |   |     +----------------+
  |  customer_id +-------> |  id           | <-----+   customer_id   |   |
  |              |         |               |       |   burger_id     +---+
- |  name        |         |  name         |       |   order_id      +---+     +----------------+
+ |  desc        |         |  name         |       |   order_id      +---+     +----------------+
  |              |         |               |       |   quantity      |   |     |    Order       |
  +--------------+         +---------------+       +-----------------+   |     |                |
                                                                         +---> |   id           |
@@ -958,42 +1017,52 @@ color = getColor(line, col)
 ```
 
 <details> 
+  <summary>Hint</summary>
+    <pre>
+        Interface ICheckerboard {
+            function getColor (int line, int column): string;
+        }
+    </pre>
+</details>
+
+<details> 
   <summary>T </summary>
     <pre>
 
         Class CheckerboardTest {
+            ICheckerboard checkerboard
 
             function specification_case_test (){
-                color = Checkerboard.getColor(2, 4)
+                color = checkerboard.getColor(2, 4)
 
                 assert(color == 'black')
             }
 
             function limit_test (){
-                color = Checkerboard.getColor(0, 0)
+                color = checkerboard.getColor(0, 0)
                 assert(color == 'black')
 
-                color = Checkerboard.getColor(0, 7)
+                color = checkerboard.getColor(0, 7)
                 assert(color == 'white')
 
-                color = Checkerboard.getColor(7, 0)
+                color = checkerboard.getColor(7, 0)
                 assert(color == 'white')
 
-                color = Checkerboard.getColor(7, 7)
+                color = checkerboard.getColor(7, 7)
                 assert(color == 'black')
             }
 
             function out_limit_test (){
-                color = Checkerboard.getColor(-1, 0)
+                color = checkerboard.getColor(-1, 0)
                 assert(color == null)
 
-                color = Checkerboard.getColor(0, -1)
+                color = checkerboard.getColor(0, -1)
                 assert(color == null)
 
-                color = Checkerboard.getColor(8, 0)
+                color = checkerboard.getColor(8, 0)
                 assert(color == null)
 
-                color = Checkerboard.getColor(0, 8)
+                color = checkerboard.getColor(0, 8)
                 assert(color == null)
             }
         }
@@ -1005,7 +1074,7 @@ color = getColor(line, col)
   <summary>I </summary>
     <pre>
 
-        Class Checkerboard {
+        Class Checkerboard implements ICheckerboard {
             MIN_LINE = 0
             MAX_LINE = 0
             MIN_COLUMN = 7
