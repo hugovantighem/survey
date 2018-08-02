@@ -35,7 +35,7 @@ Développement web
 * CORS
 * OAuth, SAML, OPEN-ID
 * [Asymetric key encryption](#asymetric-key-encryption)
-* HTTPS certificats SSL
+* [HTTPS](#https)
 * CURL
 
 Spring
@@ -814,6 +814,34 @@ priv_B
 Expliquer l'échange sécurisé d'un message A --> B
 
 Expliquer la vérification de l'authenticité de l'expéditeur B --> A
+
+
+### Response
+
+
+
+---
+##       HTTPS
+### Handshake
+
+
+### Statement
+
+Expliquer le principe de handshake https
+
+
+### Response
+
+
+
+---
+##       HTTPS
+### schema
+
+
+### Statement
+
+Décrire une architecture + éléments de configuration pour fournir un service en https
 
 
 ### Response
